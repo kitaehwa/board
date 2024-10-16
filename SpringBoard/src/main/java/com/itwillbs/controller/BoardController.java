@@ -51,7 +51,13 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	// 게시판 리스트
+	// 게시판 리스트 - GET
+	// http://localhost:8088/board/listAll
+	@RequestMapping(value = "/listAll",method = RequestMethod.GET)
+	public void listAllGET() throws Exception{
+		logger.debug("/listAll -> listAllGET() 호출");
+		
+	}
 	
 	
 	
