@@ -5,6 +5,7 @@
 	<h1> listAll.jsp </h1>
 <%-- 	${boardList }<hr> --%>
 <%-- 	${requestScope}<hr> --%>
+result : ${result }
 
 	<div class="box">
 	<div class="box-header with-border">
@@ -20,7 +21,7 @@
 	<th style="width: 40px">viewcnt</th>
 	</tr>
 	
-	<c:forEach items="${boardList }">
+	<c:forEach items="${boardList }" var="vo">
 		<tr>
 		<td>${vo.bno }</td>
 		<td>${vo.title }</td>
@@ -43,7 +44,19 @@
 	</div>
 	</div>
 	
+	<script type="text/javascript">
+		
+	/* JSP페이지의 실행 순서  
+		JSP(JAVA) -> JSTL/EL -> HTML -> JavaScript / JQuery
+	*/
+	/* JS에서 el표현식의 데이터를 사용가능  */
+		var result = '${result}';
 	
+		if(result == "INSERTOK"){
+		alert("정상적으로 글쓰기 동작 완료!");	
+		}
+		
+	</script>
 
 
 
