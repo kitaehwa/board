@@ -24,7 +24,9 @@ result : ${result }
 	<c:forEach items="${boardList }" var="vo">
 		<tr>
 		<td>${vo.bno }</td>
-		<td>${vo.title }</td>
+		<td>
+			<a href="/board/read?bno=${vo.bno}"> ${vo.title } </a>
+		</td>
 		<td>${vo.writer }</td>
 		<td><span class="badge bg-green">${vo.viewcnt }</span></td>
 		</tr>
