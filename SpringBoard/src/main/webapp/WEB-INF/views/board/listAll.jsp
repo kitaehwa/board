@@ -20,7 +20,7 @@
 	<th style="width: 40px">viewcnt</th>
 	</tr>
 	
-	<c:forEach items="${boardList}">
+	<c:forEach items="${boardList }">
 		<tr>
 		<td>${vo.bno }</td>
 		<td>${vo.title }</td>
