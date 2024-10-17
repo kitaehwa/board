@@ -43,6 +43,16 @@ public class BoardDAOImpl implements BoardDAO{
 		
 		return sqlSession.selectOne(NameSpace + "getBoard", bno);
 	}
+
+	@Override
+	public void updateViewcnt(int bno) throws Exception {
+		logger.debug("updateViewcnt(int bno) 호출");
+		// 조회수 1증가
+		sqlSession.update(NameSpace + "increseViewcnt", bno);
+		
+	}
+	
+	
 	
 	
 	
