@@ -42,7 +42,19 @@
  	</update>
  	<!-- 글 조회수 1증가(update) -->
  	
+ 	<!-- 글 수정 (update) -->
+	<update id="updateBoard">
+		update tbl_board set title=#{title}, writer=#{writer}, content=#{content} 
+		where bno = #{bno}
+	</update>	
+ 	<!-- 글 수정 (update) -->
  	
+ 	<!-- 글정보 삭제 (delete) -->
+ 	<delete id="deleteBoard">
+		delete from tbl_board
+		where bno = #{bno} 	
+ 	</delete>
+ 	<!-- 글정보 삭제 (delete) -->
  	
  	
  	
