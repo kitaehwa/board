@@ -58,6 +58,9 @@ result : ${result }
 		alert("정상적으로 글쓰기 동작 완료!");	
 		}
 		
+		if(result == "modifyOK"){
+		alert("글 정보 수정 완료!");	
+		}
 	</script>
 
 
