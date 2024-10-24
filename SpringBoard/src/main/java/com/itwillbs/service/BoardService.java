@@ -1,6 +1,8 @@
 package com.itwillbs.service;
 
 import com.itwillbs.domain.BoardVO;
+import com.itwillbs.domain.Criteria;
+
 import java.util.List;
 
 public interface BoardService {
@@ -10,6 +12,9 @@ public interface BoardService {
 	
 	// 글 리스트 조회
 	public List<BoardVO> listAll() throws Exception;
+	
+	// 글 리스트 조회(+page)
+	public List<BoardVO> listPage(Criteria cri) throws Exception;
 	
 	// 글 본문 조회
 	public BoardVO read(int bno) throws Exception;

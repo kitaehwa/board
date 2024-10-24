@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.annotation.JacksonInject.Value;
 import com.itwillbs.domain.BoardVO;
+import com.itwillbs.domain.Criteria;
 import com.itwillbs.service.BoardService;
 
 @Controller
@@ -77,6 +78,27 @@ public class BoardController {
 		logger.debug(" /board/listAll.jsp 페이지 이동 ");
 		
 	}
+	
+	// 게시판 리스트(page) - GET
+		// http://localhost:8088/board/listAll
+		@RequestMapping(value = "/listPage",method = RequestMethod.GET)
+		public String listPageGET(Criteria cri, Model model) throws Exception{
+			logger.debug("/listPage -> listPageGET() 호출");
+			
+			// Criteria cri = new Criteria();
+			
+			// 서비스 -> DAO 메서드 호출 (출력할 정보 가져오기)
+			List<BoardVO> boardList = bService.listPage(cri);
+			logger.debug("리스트 사이즈 : "+boardList.size());
+			
+			// Model 객체 사용해서 정보를 저장
+			model.addAttribute("boardList", boardList);
+			
+			// 연결된 뷰페이지에서 출력
+			logger.debug(" /board/listPage.jsp 페이지 이동 ");
+			return "/board/listPage";
+			
+		}
 	
 	// 글 본문내용 보기
 	@RequestMapping(value = "/read",method = RequestMethod.GET)
